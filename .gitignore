@@ -1,0 +1,21 @@
+# Ignore the virtual environment folder
+safesurfvenv/
+
+# Ignore the database file (if any)
+db.sqlite3
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment variables or sensitive data
+.env
+
+# Ignore other IDE configurations (VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
