@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for safesurffinal project.
 
@@ -76,14 +78,17 @@ WSGI_APPLICATION = 'safesurffinal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'safesurf_db',
-        'USER': 'root',
-        'PASSWORD': 'safesurffinal24',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.environ.get('DB_NAME', 'db_safesurf'),
+        'USER': os.environ.get('DB_USER', 'root'),
+       # 'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'hielo'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
